@@ -17,8 +17,8 @@ Your code should be documented
 Your code should use the PEP 8 style (version 1.7.x)
 All your files must be executable
 Expected Output
-lomsey41@ubuntu:~/0x01-lockboxes$ ./main_0.py
+kingkelv20@ubuntu:~/0x01-lockboxes$ ./main_0.py
 True
 True
 False
-lomsey41@ubuntu:~/0x01-lockboxes$
+kingkelv20@ubuntu:~/0x01-lockboxes$
