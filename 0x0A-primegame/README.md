@@ -1,58 +1,77 @@
-# 0x0A. Prime Game
+# 0x09. Island Perimeter
 
-## Tasks
+## Requirements
 
-### 0. Prime Game
+- Allowed editors: `vi`, `vim`, `emacs`
 
-Maria and Ben are playing a game. Given a set of consecutive integers starting from  `1`  up to and including  `n`, they take turns choosing a prime number from the set and removing that number and its multiples from the set. The player that cannot make a move loses the game.
+- All your files will be interpreted/compiled on `Ubuntu 14.04 LTS` using `python3 (version 3.4.3)`
 
-They play  `x`  rounds of the game, where  `n`  may be different for each round. Assuming Maria always goes first and both players play optimally, determine who the winner of each game is.
+- All your files should end with a new line
+- The first line of all your files should be exactly `#!/usr/bin/python3`
 
--   Prototype:  `def isWinner(x, nums)`
--   where  `x`  is the number of rounds and  `nums`  is an array of  `n`
--   Return: name of the player that won the most rounds
--   If the winner cannot be determined, return  `None`
--   You can assume  `n`  and  `x`  will not be larger than 10000
--   You cannot import any packages in this task
+- A README.md file, at the root of the folder of the project, is mandatory
 
-Example:
+- Your code should use the `PEP 8 style (version 1.7)`
 
--   `x`  =  `3`,  `nums`  =  `[4, 5, 1]`
+- You are not allowed to import any module
 
-First round:  `4`
+- All modules and functions must be documented
 
--   Maria picks 2 and removes 2, 4, leaving 1, 3
--   Ben picks 3 and removes 3, leaving 1
--   Ben wins because there are no prime numbers left for Maria to choose
+- All your files must be executable
 
-Second round:  `5`
+## Task
 
--   Maria picks 2 and removes 2, 4, leaving 1, 3, 5
--   Ben picks 3 and removes 3, leaving 1, 5
--   Maria picks 5 and removes 5, leaving 1
--   Maria wins because there are no prime numbers left for Ben to choose
+### 0. Island Perimeter
 
-Third round:  `1`
+mandatory
 
--   Ben wins because there are no prime numbers for Maria to choose
+Create a function  `def island_perimeter(grid):`  that returns the perimeter of the island described in  `grid`:
 
-**Result: Ben has the most wins**
+-   `grid`  is a list of list of integers:
+    -   0 represents water
+    -   1 represents land
+    -   Each cell is square, with a side length of 1
+    -   Cells are connected horizontally/vertically (not diagonally).
+    -   `grid`  is rectangular, with its width and height not exceeding 100
+-   The grid is completely surrounded by water
+-   There is only one island (or nothing).
+-   The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
 
-```
-carrie@ubuntu:~/0x0A-primegame$ cat main_0.py
+```bash
+guillaume@ubuntu:~/0x09$ cat 0-main.py
 #!/usr/bin/python3
+"""
+0-main
+"""
+island_perimeter = __import__('0-island_perimeter').island_perimeter
 
-isWinner = __import__('0-prime_game').isWinner
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+    print(island_perimeter(grid))
 
-
-print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
-
-carrie@ubuntu:~/0x0A-primegame$
+guillaume@ubuntu:~/0x09$ 
+guillaume@ubuntu:~/0x09$ ./0-main.py
+12
+guillaume@ubuntu:~/0x09$ 
 
 ```
 
-```
-carrie@ubuntu:~/0x0A-primegame$ ./main_0.py
-Winner: Ben
-carrie@ubuntu:~/0x0A-primegame$
-```
+# 0x09. Island Perimeter
+
+Create a function def island_perimeter(grid): that returns the perimeter of the island described in grid:
+
+- grid is a list of list of integers:
+    - 0 represents water
+    - 1 represents land
+    - Each cell is square, with a side length of 1
+    - Cells are connected horizontally/vertically (not diagonally).
+    - grid is rectangular, with its width and height not exceeding 100
+- The grid is completely surrounded by water
+- There is only one island (or nothing).
+- The island doesn’t have “lakes” (water inside that isn’t connected to the water surrounding the island).
